@@ -32,12 +32,12 @@ let package = Package(
 		.library(name: "PerfectCrypto", targets: ["PerfectCrypto"])
 	],
     dependencies: [
-		.package(url: "https://github.com/ryancoyne/PerfectLib.git", from: "3.0.0"),
+		.package(url: "https://github.com/ryancoyne/PerfectLib.git", from: "4.0.0"),
 		.package(url: "https://github.com/PerfectlySoft/Perfect-Thread.git", from: "3.0.0"),
 		.package(url: cOpenSSLRepo, from: "3.0.0")
 	],
 	targets: [
-		.target(name: "PerfectCrypto", dependencies: ["PerfectLib", "PerfectThread", "COpenSSL"]),
+        .target(name: "PerfectCrypto", dependencies: ["PerfectLib", "PerfectThread", "COpenSSL"], path: "Sources/PerfectCrypto"),
 		.testTarget(name: "PerfectCryptoTests", dependencies: ["PerfectCrypto"])
 	]
 )
